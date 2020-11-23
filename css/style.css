@@ -27,8 +27,21 @@ h1, h2 {
   font-family: 'Caveat', cursive;
 }
 
+h3 {
+  margin-bottom: 0;
+}
+
+.item-details h3 + p {
+  font-style: italic;
+}
+
+.item-details h3 ~ p {
+  margin: 0;
+}
+
 .content-wrap {
-  width: 800px;
+  max-width: 800px;
+  width: 85%;
   margin: 0 auto;
   padding: 60px 0;
 }
@@ -37,8 +50,7 @@ h1, h2 {
 ------------------------*/
 header {
   color: #D5DFE5;
-  background-color: #171762;
-  text-align: center;
+  background-color: #2F3061;
 }
 
 header p a {
@@ -51,22 +63,47 @@ header p a {
   background-color: #D6BBC0;
 }
 
+.project-item {
+  border-bottom: 1px dashed #000000;
+  padding: 25px 0;
+  overflow: hidden;
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
+.project-btn {
+  background-color: #2F3061;
+  color: #ffff;
+  padding: 8px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.project-btn:hover {
+  background-color: #343466;
+}
+
 /* Work experience 
 ------------------------*/
 .work-experience {
   background-color: #D5DFE5;
 }
 
-.job-item {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  column-gap: 20px;
-}
-
 /* Education
 ------------------------*/
 .education {
-  background-color: #F3C0B9;
+  background-image: url(../images/joanna-kosinska-unsplash.jpg);
+  background-size: cover;
+  background-position: top right;
+  background-color: rgba(255,255,255,0.3);
+  background-blend-mode: lighten;
+  padding-bottom: 100px;
+}
+
+.education p {
+  width: 60%;
 }
 
 /* Contact Info
@@ -74,7 +111,6 @@ header p a {
 footer {
   background-color: #262730;
   color: #D5DFE5; 
-  text-align: center;
 }
 
 footer a {
@@ -82,8 +118,6 @@ footer a {
 }
 
 .contact-list {
-  display: flex;
-  justify-content: center;
   list-style-type: none;
   padding: 0;
 }
@@ -91,4 +125,45 @@ footer a {
 .contact-list a {
   padding: 15px;
   display: inline-block;
+}
+
+/* Responsive
+------------------------*/
+
+@media screen and (min-width: 750px) {
+  .job-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+  }
+
+  header, footer {
+    text-align: center;
+  }
+
+  .contact-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .project-item img {
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  h1 {
+    font-size: 75px;
+    line-height: 0.9;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    line-height: 1;
+  }
+
+  .contact-list a {
+    padding: 5px;
+  }
 }
